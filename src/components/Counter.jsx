@@ -7,8 +7,8 @@ const Counter = ({ count, onIncrement, onDecrement }) => {
             <h5 className="text-2xl font-semibold">{count}  </h5>
             <div className="flex space-x-3">
 
-                <Button handler={onIncrement}>Increment </Button>
-                <Button type={"danger"} handler={onDecrement} >Decrement  </Button>
+                <Button handler={onIncrement}>Add 2 </Button>
+                <Button type={"danger"} handler={onDecrement} >Substract 2   </Button>
             </div>
 
         </div>

@@ -3,17 +3,19 @@ import Counter from './components/Counter';
 import Stats from './components/Stats';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from './features/counters/CounterSlice';
+import { decrementby2, incrementby2 } from './features/counters2/newSlice';
+import Posts from './components/Posts';
 
 const App = () => {
-  const counters = useSelector((state) => state.counters) // ekhane amra store er sob gulo state theke amader jei state ta necessary ta nibo 
+  const counters = useSelector((state) => state.counters2) // ekhane amra store er sob gulo state theke amader jei state ta necessary ta nibo 
   const dispatch = useDispatch()
   const totalCount = counters.reduce((sum, current) => sum + current.value, 0)
 
   const handleIncrement = (counterId) => {
-    dispatch(increment(counterId))
+    dispatch(incrementby2(counterId))
   }
   const handleDecrement = (counterId) => {
-    dispatch(decrement(counterId))
+    dispatch(decrementby2(counterId))
 
   }
   return (
@@ -30,6 +32,7 @@ const App = () => {
           />
         ))}
         <Stats totalCount={totalCount} />
+        <Posts />
       </div>
     </div>
   );
