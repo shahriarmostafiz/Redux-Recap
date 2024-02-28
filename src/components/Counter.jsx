@@ -1,14 +1,14 @@
 import React from 'react';
 import Button from './Button';
 
-const Counter = () => {
+const Counter = ({ count, onIncrement, onDecrement }) => {
     return (
         <div className="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow">
-            <h5 >Count Value  </h5>
+            <h5 className="text-2xl font-semibold">{count}  </h5>
             <div className="flex space-x-3">
 
-                <Button >Increment </Button>
-                <Button type={"danger"} >Decrement  </Button>
+                <Button handler={onIncrement}>Increment </Button>
+                <Button type={"danger"} handler={onDecrement} >Decrement  </Button>
             </div>
 
         </div>
